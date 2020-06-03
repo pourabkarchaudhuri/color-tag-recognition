@@ -61,9 +61,14 @@ def get_colors(image, number_of_colors, show_chart):
     for x in counts.keys():
         # print(str(counts[x]) + str(hex_colors[x]) + str(rgb_colors[x]))
         percentage = round((counts[x]/totalWeightage)*100, 2)
+        val = str(rgb_colors[x])
+        val = val[1:len(val)-1]
+        val = ''.join(val).split()
+        # print(val)
+
         result.append({
             "hex_code": hex_colors[x],
-            "rgb_Value": str(rgb_colors[x]),
+            "rgb_Value": val,
             "percentage": percentage
         })
 
